@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Contact the Visual Peer Review team for questions about our research, platform, or collaboration opportunities in visualization education.">
+    <meta name="keywords" content="contact, collaboration, visualization research, education inquiry, peer review questions">
+    <meta name="author" content="Visual Peer Review Team">
+    
+    <title>Contact Us - Visual Peer Review | Get in Touch</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div class="orb-wrap" aria-hidden="true">
+        <div class="orb o1"></div>
+        <div class="orb o2"></div>
+    </div>
+    
+    <div class="container">
+        <header class="navbar fade-in" role="banner">
+            <div class="logo-wrap">
+                <img src="assets/logo.png" alt="Visual Peer Review Logo" width="48" height="48">
+                <div class="brand">Visual Peer Review</div>
+            </div>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="demo.html">Demo</a></li>
+                    <li><a href="journals.html">Journals</a></li>
+                    <li><a href="conferences.html">Conferences</a></li>
+                    <li><a href="teams.html">Our Team</a></li>
+                    <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+                    <li><a href="join.html">Join Us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <section class="section fade-in" aria-labelledby="contact-heading">
+                <h1 id="contact-heading" class="center">Contact Us</h1>
+                <p class="kicker center">Have questions? We'd love to hear from you</p>
+            </section>
+
+            <section class="section fade-in">
+                <article class="card" style="max-width:720px;margin:0 auto">
+                    <h2>Get in Touch</h2>
+                    <p>Whether you're interested in our research, want to collaborate, or have questions about the Visual Peer Review platform, we're here to help.</p>
+                    
+                    <form class="contact-form" 
+                          onsubmit="alert('This is a demo form. In production, connect to your email service or backend API.'); return false;"
+                          aria-label="Contact form">
+                        
+                        <div style="margin-bottom:1rem">
+                            <label for="contact-name">Your Name <span aria-label="required">*</span></label>
+                            <input id="contact-name" 
+                                   type="text" 
+                                   name="name"
+                                   placeholder="Enter your full name" 
+                                   required 
+                                   aria-required="true"
+                                   style="width:100%;padding:.7rem;border-radius:10px;border:2px solid rgba(15,23,42,0.06)">
+                        </div>
+                        
+                        <div style="margin-bottom:1rem">
+                            <label for="contact-email">Your Email <span aria-label="required">*</span></label>
+                            <input id="contact-email" 
+                                   type="email" 
+                                   name="email"
+                                   placeholder="your.email@example.com" 
+                                   required 
+                                   aria-required="true"
+                                   style="width:100%;padding:.7rem;border-radius:10px;border:2px solid rgba(15,23,42,0.06)">
+                        </div>
+                        
+                        <div style="margin-bottom:1rem">
+                            <label for="contact-subject">Subject <span aria-label="required">*</span></label>
+                            <input id="contact-subject" 
+                                   type="text" 
+                                   name="subject"
+                                   placeholder="What is this regarding?" 
+                                   required 
+                                   aria-required="true"
+                                   style="width:100%;padding:.7rem;border-radius:10px;border:2px solid rgba(15,23,42,0.06)">
+                        </div>
+                        
+                        <div style="margin-bottom:1rem">
+                            <label for="contact-message">Your Message <span aria-label="required">*</span></label>
+                            <textarea id="contact-message" 
+                                      name="message"
+                                      placeholder="Tell us more about your inquiry..." 
+                                      required 
+                                      aria-required="true"
+                                      style="width:100%;padding:.7rem;border-radius:10px;border:2px solid rgba(15,23,42,0.06);min-height:160px;resize:vertical"></textarea>
+                        </div>
+                        
+                        <button class="btn primary" type="submit" aria-label="Send message">
+                            Send Message
+                        </button>
+                    </form>
+                    
+                    <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(15,23,42,0.08)">
+                        <h3>Other Ways to Connect</h3>
+                        <p><strong>Email:</strong> <a href="mailto:info@visualpeerreview.com">info@visualpeerreview.com</a></p>
+                        <p><strong>Project Lead:</strong> Dr. Alon Friedman - <a href="https://alonfriedman.net/" target="_blank" rel="noopener noreferrer">Visit Website</a></p>
+                        <p><strong>NSF Grant:</strong> <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2216227" target="_blank" rel="noopener noreferrer">Award #2216227</a></p>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer class="footer fade-in" role="contentinfo">
+            <div class="center">
+                <p>&copy; 2025 Visual Peer Review. All rights reserved.</p>
+                <p><a href="https://github.com/USFDataVisualization/VisPeerReview" target="_blank" rel="noopener noreferrer"><img src="assets/github-mark.png" alt="GitHub Logo" width="25" height="25"> GitHub Repository</a></p>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
