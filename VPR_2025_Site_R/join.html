@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Join the Visual Peer Review project as a researcher, educator, or student. Collaborate on advancing visualization education and peer review methodologies.">
+    <meta name="keywords" content="join research, collaboration, visualization education, peer review participation">
+    <meta name="author" content="Visual Peer Review Team">
+
+    <title>Join Us - Visual Peer Review | Participate in Research</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="orb-wrap" aria-hidden="true">
+        <div class="orb o1"></div>
+        <div class="orb o2"></div>
+    </div>
+
+    <div class="container">
+        <header class="navbar fade-in" role="banner">
+            <div class="logo-wrap">
+                <img src="assets/logo.png" alt="Visual Peer Review Logo" width="48" height="48">
+                <div class="brand">Visual Peer Review</div>
+            </div>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="demo.html">Demo</a></li>
+                    <li><a href="journals.html">Journals</a></li>
+                    <li><a href="conferences.html">Conferences</a></li>
+                    <li><a href="teams.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="join.html" class="active" aria-current="page">Join Us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <section class="section fade-in" aria-labelledby="join-heading">
+                <h1 id="join-heading" class="center">Join Our Research</h1>
+                <p class="kicker center">Be part of advancing visualization education and peer review methodologies</p>
+            </section>
+
+            <section class="section fade-in">
+                <article class="card participation-form">
+                    <h2>Participation Form</h2>
+                    <p class="kicker">Fill out this form to express your interest in participating in our research project.</p>
+
+                    <form id="participation-form"
+                          onsubmit="return handleParticipationSubmit(event)"
+                          aria-label="Participation form">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">
+                                    First Name <span class="required">*</span>
+                                </label>
+                                <input id="first-name"
+                                       type="text"
+                                       name="firstName"
+                                       placeholder="Enter your first name"
+                                       required
+                                       aria-required="true">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="last-name">
+                                    Last Name <span class="required">*</span>
+                                </label>
+                                <input id="last-name"
+                                       type="text"
+                                       name="lastName"
+                                       placeholder="Enter your last name"
+                                       required
+                                       aria-required="true">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">
+                                Email Address <span class="required">*</span>
+                            </label>
+                            <input id="email"
+                                   type="email"
+                                   name="email"
+                                   placeholder="your.email@example.com"
+                                   required
+                                   aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="affiliation">
+                                Institution/Organization <span class="required">*</span>
+                            </label>
+                            <input id="affiliation"
+                                   type="text"
+                                   name="affiliation"
+                                   placeholder="Your university or organization"
+                                   required
+                                   aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="role">
+                                Your Role <span class="required">*</span>
+                            </label>
+                            <select id="role"
+                                    name="role"
+                                    required
+                                    aria-required="true">
+                                <option value="">Select your role...</option>
+                                <option value="student">Student</option>
+                                <option value="educator">Educator/Instructor</option>
+                                <option value="researcher">Researcher</option>
+                                <option value="professional">Industry Professional</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interest">
+                                Area of Interest <span class="required">*</span>
+                            </label>
+                            <select id="interest"
+                                    name="interest"
+                                    required
+                                    aria-required="true">
+                                <option value="">Select your primary interest...</option>
+                                <option value="participate">Participate in peer review studies</option>
+                                <option value="implement">Implement platform in my classroom</option>
+                                <option value="collaborate">Collaborate on research</option>
+                                <option value="develop">Contribute to platform development</option>
+                                <option value="learn">Learn more about the project</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="experience">
+                                Experience with Data Visualization
+                            </label>
+                            <select id="experience"
+                                    name="experience">
+                                <option value="">Select your experience level...</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                                <option value="expert">Expert</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">
+                                Additional Information
+                            </label>
+                            <textarea id="message"
+                                      name="message"
+                                      placeholder="Tell us more about your interest in the project, any relevant experience, or questions you have..."
+                                      rows="5"></textarea>
+                        </div>
+
+                        <div class="form-group" style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                            <input type="checkbox"
+                                   id="consent"
+                                   name="consent"
+                                   required
+                                   aria-required="true"
+                                   style="width: auto; margin-top: 0.25rem;">
+                            <label for="consent" style="margin: 0; flex: 1;">
+                                I consent to being contacted about participation in the Visual Peer Review research project. <span class="required">*</span>
+                            </label>
+                        </div>
+
+                        <button class="btn primary" type="submit" aria-label="Submit participation form">
+                            Submit Application
+                        </button>
+                    </form>
+
+                    <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(15,23,42,0.08)">
+                        <h3>What Happens Next?</h3>
+                        <p>After submitting your application, our team will review your information and contact you within 2-3 business days. We'll provide more details about participation opportunities that align with your interests and availability.</p>
+
+                        <h3 style="margin-top: 1.5rem;">Questions?</h3>
+                        <p>If you have any questions about participation, please <a href="contact.html">contact us</a> or email us directly at <a href="mailto:info@visualpeerreview.com">info@visualpeerreview.com</a>.</p>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer class="footer fade-in" role="contentinfo">
+            <div class="center">
+                <p>&copy; 2025 Visual Peer Review. All rights reserved.</p>
+                <p><a href="https://github.com/USFDataVisualization/VisPeerReview" target="_blank" rel="noopener noreferrer"><img src="assets/github-mark.png" alt="GitHub Logo" width="25" height="25"> GitHub Repository</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function handleParticipationSubmit(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const data = {
+                timestamp: new Date().toISOString(),
+                firstName: formData.get('firstName'),
+                lastName: formData.get('lastName'),
+                email: formData.get('email'),
+                affiliation: formData.get('affiliation'),
+                role: formData.get('role'),
+                interest: formData.get('interest'),
+                experience: formData.get('experience'),
+                message: formData.get('message'),
+                consent: formData.get('consent') === 'on'
+            };
+
+            // Store in localStorage
+            try {
+                const submissions = JSON.parse(localStorage.getItem('vpr_join_requests') || '[]');
+                submissions.push(data);
+                localStorage.setItem('vpr_join_requests', JSON.stringify(submissions));
+
+                // Show success message
+                alert('Thank you for your interest! Your application has been submitted successfully. We will contact you within 2-3 business days.');
+
+                // Reset form
+                event.target.reset();
+            } catch (e) {
+                console.error('Failed to save submission', e);
+                alert('Thank you for your interest! Please note: Local storage is not available, but you can still contact us at info@visualpeerreview.com');
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

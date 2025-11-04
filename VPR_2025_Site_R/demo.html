@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -68,10 +69,37 @@
 
         <main id="main-content">
             <section class="section fade-in" aria-labelledby="demo-heading">
-                <h1 id="demo-heading" class="center">Visual Peer Review – Demo</h1>
+                <h1 id="demo-heading" class="center">
+                    Visual Peer Review — Demo
+                    <span class="info-icon" id="demo-info" tabindex="0" role="button" aria-label="How to use demo">?</span>
+                    <div class="info-tooltip" id="demo-tooltip" role="tooltip">
+                        <h4>How to Use the Demo</h4>
+                        <p>Follow these steps to evaluate a visualization:</p>
+                        <ul>
+                            <li><strong>Step 1:</strong> Upload an image by dragging & dropping, using the file upload button, or pasting a URL</li>
+                            <li><strong>Step 2:</strong> Rate the visualization on three criteria: Lie Factor, Data-Ink Ratio, and Chart Junk</li>
+                            <li><strong>Step 3:</strong> Add detailed comments for each criterion to explain your evaluation</li>
+                            <li><strong>Step 4:</strong> Click "Save Review" to store your feedback</li>
+                        </ul>
+                        <img src="assets/progress-made.png" alt="Interface comparison showing initial and enhanced versions" style="max-width: 100%; margin-top: 1rem; border-radius: 8px;">
+                        <p style="margin-top: 0.75rem; font-size: 0.85rem; font-style: italic;">Our enhanced interface uses nudges to guide you toward more comprehensive reviews.</p>
+                    </div>
+                </h1>
                 <p class="kicker center">Load a visualization, evaluate it using our three-item rubric with detailed comments, and save your comprehensive review.</p>
+
+                <!-- Secondary Navigation for Demo/Analytics Toggle -->
+                <div class="secondary-nav" role="navigation" aria-label="Demo section navigation">
+                    <button id="show-demo-btn" class="secondary-nav-btn active" aria-pressed="true">
+                        📝 Demo & Review
+                    </button>
+                    <button id="show-analytics-btn" class="secondary-nav-btn" aria-pressed="false">
+                        📊 Analytics Dashboard
+                    </button>
+                </div>
             </section>
 
+            <!-- DEMO CONTENT WRAPPER -->
+            <div id="demo-content">
             <section class="section fade-in">
                 <article class="card">
                     <h2>Visualization</h2>
@@ -270,6 +298,88 @@
                     </div>
                 </article>
             </section>
+            </div>
+            <!-- END DEMO CONTENT WRAPPER -->
+
+            <!-- ANALYTICS CONTENT WRAPPER -->
+            <div id="analytics-content" style="display: none;">
+            <section class="section fade-in">
+                <h2 class="center" style="margin-bottom: 0.5rem;">📊 Review Analytics</h2>
+                <p class="kicker center" style="margin-bottom: 2rem;">Insights and statistics from your visualization reviews</p>
+
+                <!-- Summary Statistics -->
+                <div class="grid" id="stats-grid" style="margin-bottom: 2rem;">
+                    <article class="card stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-value" id="total-reviews">0</div>
+                        <div class="stat-label">Total Reviews</div>
+                    </article>
+
+                    <article class="card stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-value" id="avg-score">-</div>
+                        <div class="stat-label">Average Score</div>
+                    </article>
+
+                    <article class="card stat-card">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-value" id="max-score">-</div>
+                        <div class="stat-label">Highest Score</div>
+                    </article>
+
+                    <article class="card stat-card">
+                        <div class="stat-icon">📉</div>
+                        <div class="stat-value" id="min-score">-</div>
+                        <div class="stat-label">Lowest Score</div>
+                    </article>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="grid" style="margin-bottom: 2rem;">
+                    <!-- Score Distribution -->
+                    <article class="card chart-card">
+                        <h3>Score Distribution</h3>
+                        <canvas id="scoreDistChart" aria-label="Bar chart showing distribution of review scores"></canvas>
+                    </article>
+
+                    <!-- Criteria Breakdown -->
+                    <article class="card chart-card">
+                        <h3>Criteria Average Scores</h3>
+                        <canvas id="criteriaChart" aria-label="Bar chart showing average scores by criteria"></canvas>
+                    </article>
+                </div>
+
+                <!-- Radar Chart -->
+                <article class="card" style="margin-bottom: 2rem;">
+                    <h3>Criteria Radar Analysis</h3>
+                    <p class="kicker" style="text-align: center; margin-bottom: 1rem;">Visual comparison of average scores across all three criteria</p>
+                    <div style="max-width: 600px; margin: 0 auto;">
+                        <canvas id="radarChart" aria-label="Radar chart showing criteria comparison"></canvas>
+                    </div>
+                </article>
+
+                <!-- Trends Over Time -->
+                <article class="card" style="margin-bottom: 2rem;">
+                    <h3>Review Trends Over Time</h3>
+                    <canvas id="trendsChart" aria-label="Line chart showing review scores over time"></canvas>
+                </article>
+
+                <!-- Export Options -->
+                <article class="card" style="text-align: center;">
+                    <h3>Export Analytics Data</h3>
+                    <p class="kicker">Download your analytics data for further analysis</p>
+                    <div style="margin-top: 1rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <button id="export-csv" class="btn primary" aria-label="Export data as CSV">
+                            Export as CSV
+                        </button>
+                        <button id="export-analytics-json" class="btn ghost" aria-label="Export data as JSON">
+                            Export as JSON
+                        </button>
+                    </div>
+                </article>
+            </section>
+            </div>
+            <!-- END ANALYTICS CONTENT WRAPPER -->
         </main>
 
         <footer class="footer fade-in" role="contentinfo">
@@ -279,7 +389,8 @@
             </div>
         </footer>
     </div>
-    
+
     <script src="script.js"></script>
+    <script src="analytics.js"></script>
 </body>
 </html>

@@ -43,6 +43,67 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // Info Tooltip functionality
+  const infoIcon = document.getElementById('demo-info');
+  const infoTooltip = document.getElementById('demo-tooltip');
+
+  if (infoIcon && infoTooltip) {
+    infoIcon.addEventListener('click', () => {
+      infoTooltip.classList.toggle('show');
+    });
+
+    infoIcon.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        infoTooltip.classList.toggle('show');
+      }
+    });
+
+    // Close tooltip when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!infoIcon.contains(e.target) && !infoTooltip.contains(e.target)) {
+        infoTooltip.classList.remove('show');
+      }
+    });
+  }
+
+  // Secondary Navigation Toggle for Demo/Analytics
+  const showDemoBtn = document.getElementById('show-demo-btn');
+  const showAnalyticsBtn = document.getElementById('show-analytics-btn');
+  const demoContent = document.getElementById('demo-content');
+  const analyticsContent = document.getElementById('analytics-content');
+
+  if (showDemoBtn && showAnalyticsBtn && demoContent && analyticsContent) {
+    showDemoBtn.addEventListener('click', () => {
+      // Show demo content
+      demoContent.style.display = 'block';
+      analyticsContent.style.display = 'none';
+
+      // Update button states
+      showDemoBtn.classList.add('active');
+      showDemoBtn.setAttribute('aria-pressed', 'true');
+      showAnalyticsBtn.classList.remove('active');
+      showAnalyticsBtn.setAttribute('aria-pressed', 'false');
+    });
+
+    showAnalyticsBtn.addEventListener('click', () => {
+      // Show analytics content
+      demoContent.style.display = 'none';
+      analyticsContent.style.display = 'block';
+
+      // Update button states
+      showAnalyticsBtn.classList.add('active');
+      showAnalyticsBtn.setAttribute('aria-pressed', 'true');
+      showDemoBtn.classList.remove('active');
+      showDemoBtn.setAttribute('aria-pressed', 'false');
+
+      // Refresh analytics when switching to analytics view
+      if (typeof refreshAnalytics === 'function') {
+        refreshAnalytics();
+      }
+    });
+  }
+
   // Demo page functionality
   const demoImage = document.getElementById('demo-image');
   if (!demoImage) return;
@@ -392,7 +453,12 @@ document.addEventListener('DOMContentLoaded', function() {
         renderReviews();
         showNotification('✅ Review saved successfully!', 'success');
         announceToScreenReader('Review saved successfully');
-        
+
+        // Refresh analytics if available
+        if (typeof window.refreshAnalytics === 'function') {
+          window.refreshAnalytics();
+        }
+
         // Reset form
         form.reset();
         updateNudge();
@@ -419,6 +485,11 @@ document.addEventListener('DOMContentLoaded', function() {
       renderReviews();
       showNotification('All reviews cleared', 'success');
       announceToScreenReader('All reviews have been cleared');
+
+      // Refresh analytics if available
+      if (typeof window.refreshAnalytics === 'function') {
+        window.refreshAnalytics();
+      }
     });
   }
 
