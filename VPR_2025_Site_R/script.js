@@ -43,29 +43,58 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Info Tooltip functionality
+  // Info Tooltip functionality with backdrop
   const infoIcon = document.getElementById('demo-info');
   const infoTooltip = document.getElementById('demo-tooltip');
+  const tooltipBackdrop = document.getElementById('tooltip-backdrop');
+  const tooltipClose = document.getElementById('tooltip-close');
+
+  function openTooltip() {
+    if (infoTooltip && tooltipBackdrop) {
+      infoTooltip.classList.add('show');
+      tooltipBackdrop.classList.add('show');
+      document.body.style.overflow = 'hidden'; // Prevent background scroll
+    }
+  }
+
+  function closeTooltip() {
+    if (infoTooltip && tooltipBackdrop) {
+      infoTooltip.classList.remove('show');
+      tooltipBackdrop.classList.remove('show');
+      document.body.style.overflow = ''; // Restore scroll
+    }
+  }
 
   if (infoIcon && infoTooltip) {
-    infoIcon.addEventListener('click', () => {
-      infoTooltip.classList.toggle('show');
+    infoIcon.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openTooltip();
     });
 
     infoIcon.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        infoTooltip.classList.toggle('show');
-      }
-    });
-
-    // Close tooltip when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!infoIcon.contains(e.target) && !infoTooltip.contains(e.target)) {
-        infoTooltip.classList.remove('show');
+        openTooltip();
       }
     });
   }
+
+  // Close button
+  if (tooltipClose) {
+    tooltipClose.addEventListener('click', closeTooltip);
+  }
+
+  // Close tooltip when clicking backdrop
+  if (tooltipBackdrop) {
+    tooltipBackdrop.addEventListener('click', closeTooltip);
+  }
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && infoTooltip && infoTooltip.classList.contains('show')) {
+      closeTooltip();
+    }
+  });
 
   // Secondary Navigation Toggle for Demo/Analytics
   const showDemoBtn = document.getElementById('show-demo-btn');
@@ -80,9 +109,11 @@ document.addEventListener('DOMContentLoaded', function() {
       analyticsContent.style.display = 'none';
 
       // Update button states
-      showDemoBtn.classList.add('active');
+      showDemoBtn.classList.remove('ghost');
+      showDemoBtn.classList.add('primary', 'active');
       showDemoBtn.setAttribute('aria-pressed', 'true');
-      showAnalyticsBtn.classList.remove('active');
+      showAnalyticsBtn.classList.remove('primary', 'active');
+      showAnalyticsBtn.classList.add('ghost');
       showAnalyticsBtn.setAttribute('aria-pressed', 'false');
     });
 
@@ -92,9 +123,11 @@ document.addEventListener('DOMContentLoaded', function() {
       analyticsContent.style.display = 'block';
 
       // Update button states
-      showAnalyticsBtn.classList.add('active');
+      showAnalyticsBtn.classList.remove('ghost');
+      showAnalyticsBtn.classList.add('primary', 'active');
       showAnalyticsBtn.setAttribute('aria-pressed', 'true');
-      showDemoBtn.classList.remove('active');
+      showDemoBtn.classList.remove('primary', 'active');
+      showDemoBtn.classList.add('ghost');
       showDemoBtn.setAttribute('aria-pressed', 'false');
 
       // Refresh analytics when switching to analytics view
@@ -473,18 +506,34 @@ document.addEventListener('DOMContentLoaded', function() {
   const clearBtn = document.getElementById('clear-local');
   if (clearBtn) {
     clearBtn.addEventListener('click', () => {
-      if (!confirm('Are you sure you want to delete all saved reviews?')) {
+      if (!confirm('Are you sure you want to delete all saved reviews and reset the demo?')) {
         return;
       }
-      
+
       if (storageAvailable) {
         localStorage.removeItem(STORAGE_KEY);
       }
-      
+
       reviews = [];
       renderReviews();
-      showNotification('All reviews cleared', 'success');
-      announceToScreenReader('All reviews have been cleared');
+
+      // Reset the demo image to default
+      if (demoImage) {
+        demoImage.src = 'assets/demo-sample.svg';
+        demoImage.alt = 'Demonstration visualization showing sample chart';
+      }
+
+      // Reset the form
+      const form = document.getElementById('rubric-form');
+      if (form) {
+        form.reset();
+      }
+
+      // Reset progress and nudges
+      updateNudge();
+
+      showNotification('All reviews cleared and demo reset', 'success');
+      announceToScreenReader('All reviews have been cleared and demo has been reset');
 
       // Refresh analytics if available
       if (typeof window.refreshAnalytics === 'function') {

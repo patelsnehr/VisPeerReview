@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="custom-hero-style.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -20,6 +21,7 @@
     <div class="orb-wrap" aria-hidden="true">
         <div class="orb o1"></div>
         <div class="orb o2"></div>
+        <div class="orb o3"></div>
     </div>
     
     <div class="container">
@@ -42,128 +44,162 @@
         </header>
 
         <main id="main-content">
-            <section class="section fade-in" aria-labelledby="team-heading">
-                <h1 id="team-heading" class="center">Our Team</h1>
-                <p class="kicker center">Meet the researchers and educators behind Visual Peer Review</p>
+            <section class="hero-section fade-in" aria-labelledby="team-heading">
+                <div class="hero">
+                    <div class="container">
+                        <div class="hero-content">
+                            <h1 id="team-heading">Our Team</h1>
+                            <p class="kicker">Meet the researchers and educators behind Visual Peer Review</p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section class="section fade-in">
-                <div class="grid">
-                    <article class="team-card">
-                        <div class="team-photo">
-                            <img src="assets/AF.png" 
-                                 alt="Photo of Alon Friedman" 
-                                 width="150" 
-                                 height="150"
-                                 onerror="this.src='https://placehold.co/150x150/3949ab/ffffff?text=AF'"
-                                 loading="lazy">
+                <h2 class="center">Faculty & Research Leads</h2>
+                <div class="team-grid">
+                    <article class="team-card-modern">
+                        <div class="team-card-header">
+                            <div class="team-avatar">
+                                <img src="assets/AF.png"
+                                     alt="Alon Friedman"
+                                     width="200"
+                                     height="200"
+                                     onerror="this.src='https://placehold.co/200x200/6366f1/ffffff?text=AF'"
+                                     loading="lazy">
+                            </div>
                         </div>
-                        <div class="team-info">
-                            <h2>Alon Friedman</h2>
-                            <p><strong>Associate Professor</strong></p>
-                            <p>The School of Information<br>
-                            College of Arts and Sciences<br>
-                            University of South Florida</p>
-                            <p>Dr. Friedman leads research on visualization pedagogy and peer assessment methodologies in information science education.</p>
-                            <p>
-                                <a class="btn ghost" 
-                                   href="https://alonfriedman.net/" 
-                                   target="_blank" 
-                                   rel="noopener noreferrer"
-                                   aria-label="Visit Alon Friedman's personal website (opens in new tab)">
-                                    Personal Website
-                                </a>
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="team-card">
-                        <div class="team-photo">
-                            <img src="assets/KH.png" 
-                                 alt="Photo of Kevin Hawley" 
-                                 width="150" 
-                                 height="150"
-                                 onerror="this.src='https://placehold.co/150x150/5c6bc0/ffffff?text=KH'"
-                                 loading="lazy">
-                        </div>
-                        <div class="team-info">
-                            <h2>Kevin Hawley</h2>
-                            <p><strong>Master Instructor</strong></p>
-                            <p>The Zimmerman School of Advertising & Mass Communications<br>
-                            University of South Florida</p>
-                            <p>Kevin specializes in visual communication and brings practical expertise in teaching visual literacy and design principles.</p>
+                        <div class="team-card-body">
+                            <h3>Alon Friedman</h3>
+                            <p class="team-role">Associate Professor</p>
+                            <p class="team-affiliation">The School of Information<br>University of South Florida</p>
+                            <p class="team-bio">Dr. Friedman leads research on visualization pedagogy and peer assessment methodologies in information science education.</p>
+                            <a class="btn primary btn-sm"
+                               href="https://alonfriedman.net/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Visit Alon Friedman's personal website (opens in new tab)">
+                                Website
+                            </a>
                         </div>
                     </article>
 
-                    <article class="team-card">
-                        <div class="team-photo">
-                            <img src="assets/PR.png" 
-                                 alt="Photo of Paul Rosen" 
-                                 width="150" 
-                                 height="150"
-                                 onerror="this.src='https://placehold.co/150x150/7c4dff/ffffff?text=PR'"
-                                 loading="lazy">
+                    <article class="team-card-modern">
+                        <div class="team-card-header">
+                            <div class="team-avatar">
+                                <img src="assets/KH.png"
+                                     alt="Kevin Hawley"
+                                     width="200"
+                                     height="200"
+                                     onerror="this.src='https://placehold.co/200x200/8b5cf6/ffffff?text=KH'"
+                                     loading="lazy">
+                            </div>
                         </div>
-                        <div class="team-info">
-                            <h2>Paul Rosen</h2>
-                            <p><strong>Associate Professor</strong></p>
-                            <p>Scientific Computing and Imaging Institute<br>
-                            University of Utah</p>
-                            <p>Dr. Rosen contributes expertise in scientific visualization and computational methods for visualization assessment.</p>
-                        </div>
-                    </article>
-
-                    <article class="team-card">
-                        <div class="team-photo">
-                            <img src="assets/MDR.png" 
-                                 alt="Photo of Md Dilshadur Rahman" 
-                                 width="150" 
-                                 height="150"
-                                 onerror="this.src='https://placehold.co/150x150/3949ab/ffffff?text=MDR'"
-                                 loading="lazy">
-                        </div>
-                        <div class="team-info">
-                            <h2>Md Dilshadur Rahman</h2>
-                            <p><strong>Graduate Research Assistant, Ph.D. Student</strong></p>
-                            <p>Scientific Computing and Imaging Institute<br>
-                            University of Utah</p>
-                            <p>Dilshad conducts research on visualization techniques and educational technology, contributing to platform development.</p>
+                        <div class="team-card-body">
+                            <h3>Kevin Hawley</h3>
+                            <p class="team-role">Master Instructor</p>
+                            <p class="team-affiliation">The Zimmerman School of Advertising<br>University of South Florida</p>
+                            <p class="team-bio">Kevin specializes in visual communication and brings practical expertise in teaching visual literacy and design principles.</p>
                         </div>
                     </article>
 
-                    <article class="team-card">
-                        <div class="team-photo">
-                            <img src="assets/LD.png" 
-                                 alt="Photo of Ly Dinh" 
-                                 width="150" 
-                                 height="150"
-                                 onerror="this.src='https://placehold.co/150x150/5c6bc0/ffffff?text=LD'"
-                                 loading="lazy">
+                    <article class="team-card-modern">
+                        <div class="team-card-header">
+                            <div class="team-avatar">
+                                <img src="assets/PR.png"
+                                     alt="Paul Rosen"
+                                     width="200"
+                                     height="200"
+                                     onerror="this.src='https://placehold.co/200x200/3b82f6/ffffff?text=PR'"
+                                     loading="lazy">
+                            </div>
                         </div>
-                        <div class="team-info">
-                            <h2>Ly Dinh</h2>
-                            <p><strong>Ph.D. Student</strong></p>
-                            <p>NLP and Visualization Research</p>
-                            <p>Ly focuses on natural language processing applications in peer review, analyzing feedback text and sentiment patterns.</p>
+                        <div class="team-card-body">
+                            <h3>Paul Rosen</h3>
+                            <p class="team-role">Associate Professor</p>
+                            <p class="team-affiliation">Scientific Computing and Imaging Institute<br>University of Utah</p>
+                            <p class="team-bio">Dr. Rosen contributes expertise in scientific visualization and computational methods for visualization assessment.</p>
                         </div>
                     </article>
 
-                    <article class="team-card">
-                        <div class="team-photo">
-                            <img src="assets/SRP.jpeg"
-                                 alt="Photo of Sneh Patel" 
-                                 width="150" 
-                                 height="150"
-                                 onerror="this.src='https://placehold.co/150x150/7c4dff/ffffff?text=SP'"
-                                 loading="lazy">
+                    <article class="team-card-modern">
+                        <div class="team-card-header">
+                            <div class="team-avatar">
+                                <img src="assets/LD.png"
+                                     alt="Ly Dinh"
+                                     width="200"
+                                     height="200"
+                                     onerror="this.src='https://placehold.co/200x200/ff6b6b/ffffff?text=LD'"
+                                     loading="lazy">
+                            </div>
                         </div>
-                        <div class="team-info">
-                            <h2>Sneh Patel</h2>
-                            <p><strong>Student Assistant</strong></p>
-                            <p>The School of Information<br>
-                            College of Arts and Sciences<br>
-                            University of South Florida</p>
-                            <p>Sneh provides research support and assists with platform development and user testing activities.</p>
+                        <div class="team-card-body">
+                            <h3>Ly Dinh</h3>
+                            <p class="team-role">Assistant Professor</p>
+                            <p class="team-affiliation">NLP and Visualization Research</p>
+                            <p class="team-bio">Dr. Dinh focuses on natural language processing applications in peer review, analyzing feedback text and sentiment patterns.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section fade-in">
+                <h2 class="center">Graduate Researchers</h2>
+                <div class="team-grid team-grid-compact">
+                    <article class="team-card-modern team-card-compact">
+                        <div class="team-card-header">
+                            <div class="team-avatar team-avatar-sm">
+                                <img src="assets/MDR.png"
+                                     alt="Md Dilshadur Rahman"
+                                     width="150"
+                                     height="150"
+                                     onerror="this.src='https://placehold.co/150x150/14b8a6/ffffff?text=MDR'"
+                                     loading="lazy">
+                            </div>
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Md Dilshadur Rahman</h3>
+                            <p class="team-role">Ph.D. Student</p>
+                            <p class="team-affiliation">Scientific Computing and Imaging Institute<br>University of Utah</p>
+                            <p class="team-bio">Dilshad conducts research on visualization techniques and educational technology, contributing to platform development.</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card-modern team-card-compact">
+                        <div class="team-card-header">
+                            <div class="team-avatar team-avatar-sm">
+                                <img src="assets/SRP.jpeg"
+                                     alt="Sneh Patel"
+                                     width="150"
+                                     height="150"
+                                     onerror="this.src='https://placehold.co/150x150/f59e0b/ffffff?text=SP'"
+                                     loading="lazy">
+                            </div>
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Sneh Patel</h3>
+                            <p class="team-role">Student Assistant</p>
+                            <p class="team-affiliation">The School of Information<br>University of South Florida</p>
+                            <p class="team-bio">Sneh provides research support and assists with platform development and user testing activities.</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card-modern team-card-compact">
+                        <div class="team-card-header">
+                            <div class="team-avatar team-avatar-sm">
+                                <img src="assets/GSG.png"
+                                     alt="Griselda Santiago Garcia"
+                                     width="150"
+                                     height="150"
+                                     onerror="this.src='https://placehold.co/150x150/8b5cf6/ffffff?text=GSG'"
+                                     loading="lazy">
+                            </div>
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Griselda Santiago Garcia</h3>
+                            <p class="team-role">Student Assistant & Graphic Designer</p>
+                            <p class="team-affiliation">Integrated Public Relations and Advertising<br>University of South Florida</p>
+                            <p class="team-bio">Griselda supports the research team with graphic design, visual communications, outreach, and user engagement initiatives.</p>
                         </div>
                     </article>
                 </div>

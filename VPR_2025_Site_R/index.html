@@ -24,6 +24,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="custom-hero-style.css">
 </head>
 <body>
     <!-- Skip to main content for keyboard navigation -->
@@ -32,6 +33,7 @@
     <div class="orb-wrap" aria-hidden="true">
         <div class="orb o1"></div>
         <div class="orb o2"></div>
+        <div class="orb o3"></div>
     </div>
     
     <div class="container">
@@ -54,18 +56,24 @@
         </header>
 
         <main id="main-content">
-            <section class="hero fade-in" aria-labelledby="hero-heading">
-                <h1 id="hero-heading">Visual Peer Review</h1>
-                <p class="kicker">Visual Peer Review is a process where students collaboratively critique and improve each other's visualization works.</p>
-                <p>We are currently building a collaborative platform that students, researchers, and educators can use to share visualizations and receive constructive comments and rubric scores from one another.</p>
-                <div style="margin-top:1rem">
-                    <a class="btn primary" href="demo.html" aria-label="View interactive demo">See Demo</a>
-                    <a class="btn ghost" href="journals.html" aria-label="View journal publications">Journals</a>
+            <section class="hero-section fade-in" aria-labelledby="hero-heading">
+                <div class="hero">
+                    <div class="container">
+                        <div class="hero-content">
+                            <h1 id="hero-heading">Visual Peer Review</h1>
+                            <h2>Transforming Visual Communication with User Feedback</h2>
+                            <p class="kicker">Visual Peer Review is a process where students and reviewers collaboratively critique and enhance each other's visualizations. This approach empowers participants to give constructive feedback, deepen their understanding, and grow together.</p>
+                            <div class="hero-buttons">
+                                <a class="btn primary" href="demo.html" aria-label="View interactive demo">See Demo</a>
+                                <a class="btn ghost" href="journals.html" aria-label="View journal publications">Journals</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <section class="section fade-in" aria-labelledby="about-heading">
-                <h2 id="about-heading" class="center">About</h2>
+                <h2 id="about-heading">About</h2>
                 <article class="card">
                     <div class="about-section">
                         <div class="about-text">
@@ -105,11 +113,90 @@
                 </article>
             </section>
 
+            <section class="section fade-in" aria-labelledby="value-heading">
+                <h2 id="value-heading">What Visual Peer Review Brings to Education</h2>
+                <div class="card">
+                    <p class="kicker center" style="margin-bottom: 2rem;">We're transforming how students learn through peer collaboration by making feedback more visual, constructive, and impactful than ever before.</p>
+
+                    <div class="feature-cards">
+                        <div class="feature-card">
+                            <div class="feature-number">1</div>
+                            <h3>Critical Thinking</h3>
+                            <p>Students learn to evaluate work objectively, articulate constructive feedback, and reflect on their own learning process.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-number">2</div>
+                            <h3>Deeper Learning</h3>
+                            <p>Students engage more actively with course concepts when providing feedback, reinforcing their own learning while supporting peers.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-number">3</div>
+                            <h3>Collaborative Growth</h3>
+                            <p>Build a community of learners who support each other's growth, developing empathy and essential 21st-century collaboration skills.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-number">4</div>
+                            <h3>Better Outcomes</h3>
+                            <p>Research shows that structured peer review improves student work, increases engagement, and develops higher-order thinking skills.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-number">5</div>
+                            <h3>Smart Guidance</h3>
+                            <p>Our intelligent nudging system guides students to provide more constructive, specific, and actionable feedback.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-number">6</div>
+                            <h3>Accessible for All</h3>
+                            <p>From K-12 students to graduate researchers, Visual Peer Review adapts to every learning level.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section fade-in" aria-labelledby="nudges-heading">
+                <h2 id="nudges-heading">Smart Nudges</h2>
+                <div class="card">
+                    <div class="nudges-badge">✨ NEW FEATURE</div>
+                    <p class="kicker center" style="margin-bottom: 2rem;">Our latest feature guides students in providing better feedback in real-time, similar to having an experienced teacher assist each student in becoming a better reviewer, but it is not AI.</p>
+
+                    <div class="feature-cards">
+                        <div class="feature-card">
+                            <div class="feature-number">A</div>
+                            <h3>Be Specific</h3>
+                            <p>Nudges prompt reviewers to point to exact elements when giving feedback, making suggestions clearer and more actionable.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-number">B</div>
+                            <h3>Stay Constructive</h3>
+                            <p>Guides students to suggest improvements or alternatives rather than just identifying issues.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-number">C</div>
+                            <h3>Highlight Strengths</h3>
+                            <p>Reminds reviewers to balance critique with positive feedback, reinforcing effective design choices.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-number">D</div>
+                            <h3>Encourage Reflection</h3>
+                            <p>Students are nudged to compare feedback with their own work, deepening metacognitive awareness.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section class="section fade-in" aria-labelledby="get-involved">
                 <h2 id="get-involved">Get Involved</h2>
-                <div class="card">
+                <div class="card center">
                     <p class="kicker">Interested in collaborating or learning more? Visit our Contact page or join the project.</p>
-                    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+                    <div class="hero-buttons">
                         <a class="btn ghost" href="contact.html">Contact Us</a>
                         <a class="btn primary" href="join.html" aria-label="Join the site">Join Us</a>
                     </div>
@@ -199,36 +286,35 @@
             </section>
 
             <section class="section fade-in" aria-labelledby="nsf-heading">
-                <h2 id="nsf-heading" style="margin-left:6px">NSF Support</h2>
-                <div class="grid">
-                    <article class="card" style="display:flex;align-items:center;justify-content:space-between;gap:1rem">
-                        <div>
+                <h2 id="nsf-heading">NSF Support</h2>
+                <article class="card nsf-card">
+                    <div class="nsf-content">
+                        <div class="nsf-text">
                             <h3>Supported by the National Science Foundation</h3>
                             <p class="kicker">Division of Undergraduate Education (DUE) & Directorate for Education and Human Resources (EHR)</p>
                             <p>
-                                <a class="btn ghost" 
-                                   href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2216227" 
-                                   target="_blank" 
+                                <a class="btn ghost"
+                                   href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2216227"
+                                   target="_blank"
                                    rel="noopener noreferrer"
                                    aria-label="View NSF Grant No. 2216227 (opens in new tab)">
                                     View Grant No. 2216227
                                 </a>
                             </p>
                         </div>
-                        <div style="width:160px;text-align:center">
-                            <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2216227" 
-                               target="_blank" 
+                        <div class="nsf-logo">
+                            <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2216227"
+                               target="_blank"
                                rel="noopener noreferrer"
                                aria-label="National Science Foundation website (opens in new tab)">
-                                <img src="assets/NSF_Official_logo.png" 
-                                     alt="National Science Foundation Logo" 
-                                     style="max-width:100%;height:84px;object-fit:contain;border-radius:8px"
+                                <img src="assets/NSF_Official_logo.png"
+                                     alt="National Science Foundation Logo"
                                      width="160"
                                      height="84">
                             </a>
                         </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
             </section>
         </main>
 

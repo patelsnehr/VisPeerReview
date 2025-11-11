@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const STORAGE_KEY = 'vpr_reviews_v3';
   let reviews = [];
   let chartInstances = {
-    scoreDistChart: null,
     criteriaChart: null,
     trendsChart: null,
     radarChart: null
@@ -75,64 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('avg-score').textContent = stats.total > 0 ? stats.avgScore : '-';
     document.getElementById('max-score').textContent = stats.total > 0 ? stats.maxScore : '-';
     document.getElementById('min-score').textContent = stats.total > 0 ? stats.minScore : '-';
-  }
-
-  // Create Score Distribution Chart
-  function createScoreDistChart() {
-    const ctx = document.getElementById('scoreDistChart');
-    if (!ctx) return;
-
-    // Destroy existing chart if it exists
-    if (chartInstances.scoreDistChart) {
-      chartInstances.scoreDistChart.destroy();
-    }
-
-    // Calculate score distribution
-    const scoreMap = {};
-    reviews.forEach(review => {
-      const score = (parseInt(review.lieFactor) || 0) +
-                   (parseInt(review.dataInk) || 0) +
-                   (parseInt(review.chartJunk) || 0);
-      scoreMap[score] = (scoreMap[score] || 0) + 1;
-    });
-
-    const scores = Object.keys(scoreMap).sort((a, b) => a - b);
-    const counts = scores.map(s => scoreMap[s]);
-
-    chartInstances.scoreDistChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: scores.map(s => `Score ${s}`),
-        datasets: [{
-          label: 'Number of Reviews',
-          data: counts,
-          backgroundColor: 'rgba(57, 73, 171, 0.7)',
-          borderColor: 'rgba(57, 73, 171, 1)',
-          borderWidth: 2,
-          borderRadius: 8
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: true,
-        plugins: {
-          legend: {
-            display: false
-          },
-          title: {
-            display: false
-          }
-        },
-        scales: {
-          y: {
-            beginAtZero: true,
-            ticks: {
-              stepSize: 1
-            }
-          }
-        }
-      }
-    });
   }
 
   // Create Criteria Chart
@@ -483,7 +424,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Update all visualizations
     updateSummaryStats();
-    createScoreDistChart();
     createCriteriaChart();
     createRadarChart();
     createTrendsChart();
@@ -492,7 +432,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Initialize everything
   updateSummaryStats();
-  createScoreDistChart();
   createCriteriaChart();
   createRadarChart();
   createTrendsChart();

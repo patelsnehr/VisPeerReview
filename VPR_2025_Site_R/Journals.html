@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="custom-hero-style.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -20,6 +21,7 @@
     <div class="orb-wrap" aria-hidden="true">
         <div class="orb o1"></div>
         <div class="orb o2"></div>
+        <div class="orb o3"></div>
     </div>
     
     <div class="container">
@@ -42,62 +44,68 @@
         </header>
 
         <main id="main-content">
-            <section class="section fade-in" aria-labelledby="journals-heading">
-                <h1 id="journals-heading" class="center">Journal Publications</h1>
-                <p class="kicker center">Our peer-reviewed research on visualization education and assessment</p>
+            <section class="hero-section fade-in" aria-labelledby="journals-heading">
+                <div class="hero">
+                    <div class="container">
+                        <div class="hero-content">
+                            <h1 id="journals-heading">Journal Publications</h1>
+                            <p class="kicker">Our peer-reviewed research on visualization education and assessment</p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section class="section fade-in">
-                <div class="grid">
-                    <article class="card">
-                        <h2>2024</h2>
-                        <h3>Examining peer review network dynamics in higher education visual communication courses using ERGM</h3>
-                        <p><strong>Authors:</strong> Dinh, L., Friedman, A., & Hawley, K</p>
-                        <p class="kicker">Published in <em>Computers and Education Open</em></p>
-                        <p>This study examines the network dynamics of peer review in visual communication courses using Exponential Random Graph Models (ERGM), providing insights into how students interact and learn from each other through structured feedback.</p>
-                        <p>
-                            <a class="btn primary" 
-                               href="https://www.sciencedirect.com/science/article/pii/S2666557324000624" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               aria-label="Read full paper on ScienceDirect (opens in new tab)">
-                                Read Full Paper
-                            </a>
-                        </p>
+                <div class="publications-container">
+                    <article class="publication-card">
+                        <div class="publication-year">2024</div>
+                        <div class="publication-content">
+                            <p class="publication-citation">Dinh, L., Friedman, A., & Hawley, K. (2024). Examining peer review network dynamics in higher education visual communication courses using ERGM. <em>Computers and Education Open</em>, <em>7</em>, 100222.</p>
+                            <p class="publication-abstract">This study examines the network dynamics of peer review in visual communication courses using Exponential Random Graph Models (ERGM), providing insights into how students interact and learn from each other through structured feedback.</p>
+                            <div class="publication-actions">
+                                <a class="btn primary btn-sm"
+                                   href="https://www.sciencedirect.com/science/article/pii/S2666557324000624"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Read full paper on ScienceDirect (opens in new tab)">
+                                    Read Paper
+                                </a>
+                            </div>
+                        </div>
                     </article>
 
-                    <article class="card">
-                        <h2>2021</h2>
-                        <h3>Through the Looking Glass: Insights into Visualization Pedagogy through Sentiment Analysis of Peer Review Text</h3>
-                        <p><strong>Authors:</strong> Beasley, Z., Friedman, A., & Rosen, P</p>
-                        <p class="kicker">Published in <em>IEEE Computer Graphics and Applications</em></p>
-                        <p>This research applies sentiment analysis to peer review feedback in visualization courses, revealing patterns in how students critique visualizations and offering pedagogical insights for improving visualization education.</p>
-                        <p>
-                            <a class="btn primary" 
-                               href="https://www.computer.org/csdl/magazine/cg/2021/06/09547773/1x9TPkOzHmU" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               aria-label="Read full paper on IEEE Computer Society (opens in new tab)">
-                                Read Full Paper
-                            </a>
-                        </p>
+                    <article class="publication-card">
+                        <div class="publication-year">2021</div>
+                        <div class="publication-content">
+                            <p class="publication-citation">Beasley, Z., Friedman, A., & Rosen, P. (2021). Through the Looking Glass: Insights into Visualization Pedagogy through Sentiment Analysis of Peer Review Text. <em>IEEE Computer Graphics and Applications</em>, <em>41</em>(6), 9-17.</p>
+                            <p class="publication-abstract">This research applies sentiment analysis to peer review feedback in visualization courses, revealing patterns in how students critique visualizations and offering pedagogical insights for improving visualization education.</p>
+                            <div class="publication-actions">
+                                <a class="btn primary btn-sm"
+                                   href="https://www.computer.org/csdl/magazine/cg/2021/06/09547773/1x9TPkOzHmU"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Read full paper on IEEE Computer Society (opens in new tab)">
+                                    Read Paper
+                                </a>
+                            </div>
+                        </div>
                     </article>
 
-                    <article class="card">
-                        <h2>2019</h2>
-                        <h3>Toward peer-review software and a rubric application in visual analytics classes: A case study</h3>
-                        <p><strong>Authors:</strong> Friedman, A</p>
-                        <p class="kicker">Published in <em>Education for Information</em></p>
-                        <p>A case study examining the implementation of peer-review software and rubric-based evaluation in visual analytics education, demonstrating improved learning outcomes and student engagement through structured feedback mechanisms.</p>
-                        <p>
-                            <a class="btn primary" 
-                               href="https://eric.ed.gov/?id=EJ1228229" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               aria-label="Read full paper on ERIC database (opens in new tab)">
-                                Read Full Paper
-                            </a>
-                        </p>
+                    <article class="publication-card">
+                        <div class="publication-year">2019</div>
+                        <div class="publication-content">
+                            <p class="publication-citation">Friedman, A. (2019). Toward peer-review software and a rubric application in visual analytics classes: A case study. <em>Education for Information</em>, <em>35</em>(3), 243-263.</p>
+                            <p class="publication-abstract">A case study examining the implementation of peer-review software and rubric-based evaluation in visual analytics education, demonstrating improved learning outcomes and student engagement through structured feedback mechanisms.</p>
+                            <div class="publication-actions">
+                                <a class="btn primary btn-sm"
+                                   href="https://eric.ed.gov/?id=EJ1228229"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Read full paper on ERIC database (opens in new tab)">
+                                    Read Paper
+                                </a>
+                            </div>
+                        </div>
                     </article>
                 </div>
             </section>
